@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+</head>
+<body>
+    
+    <h1>Palindrome Checker</h1>
+
+    <input type="text" id="input" placeholder="Type something...">
+    <button onclick="check()">Check</button>
+
+    <script>
+        // স্ট্রিং রিভার্স করার ফাংশন
+        function reverseString(str) {
+            return str.split('').reverse().join('');
+        }
+
+        // চেক করার ফাংশন
+        function check() {
+            const input = document.getElementById('input'); // ইনপুট ফিল্ডকে সিলেক্ট করা
+            const value = input.value; // ইউজারের দেওয়া ইনপুট নেওয়া
+            const reverse = reverseString(value); // ইনপুটকে উল্টো করা
+            if (value === reverse) {
+                alert('P A L I N D R O M E'); // প্যালিনড্রোম হলে এলার্ট
+            } else {
+                alert('Not Today'); // প্যালিনড্রোম না হলে এলার্ট
+            }
+            input.value = ''; // চেক করার পর ইনপুট ফিল্ড ক্লিয়ার করা
+        }
+    </script>
+
+</body>
+</html>
